@@ -1,0 +1,262 @@
+div.chip_drawing {
+    display: none;
+
+    border: 1px dotted #bbb;
+    padding: 10px;
+    width: 355px;
+    height: 355px;
+}
+div.chip_drawing div.chip {
+    border: 2px solid black;
+    padding: 10px;
+    width: 270px;
+    height: 270px;
+    margin-left: 30px;
+}
+div.chip_drawing div.chip p {
+    color: #666;
+    font-size: 10px;
+    padding: 20px;
+    margin: 0;
+}
+div.chip_drawing div.chip p.name {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+div.chip_drawing div.edge {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: #000;
+}
+div.chip_drawing ul.pinrow {
+    padding: 0;
+    margin: 0;
+
+}
+div.chip_drawing div.chip ul.pinrow li {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0 0 5px 0;
+}
+div.chip_drawing ul.pinrow.outside li {
+    list-style-type: none; 
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    background: #444;
+    text-align: center;
+    margin: 0 5px 5px 0;
+}
+div.chip_drawing .outside li a:link,
+div.chip_drawing .outside li a:hover,
+div.chip_drawing .outside li a:visited {
+    color: #fff !important;
+    font-size: 10px;
+    text-align: center;
+}
+div.chip_drawing li a:link, div.chip_drawing li a:hover,
+div.chip_drawing li a:visited {
+    color: #333 !important;
+    font-size: 10px;
+    text-align: center;
+}
+div.chip_drawing ul.pinrow.top {
+    margin-left: 53px;
+}
+div.chip_drawing ul.pinrow.left {
+    float: left;
+    margin-top: 20px;
+}
+div.chip_drawing ul.pinrow.bottom {
+    clear: both;
+    margin-left: 53px;
+    margin-top: 1px;
+}
+div.chip_drawing ul.pinrow.right {
+    float: right;
+    margin-top: 20px;
+}
+div.chip_drawing ul.pinrow.top li, div.chip_drawing ul.pinrow.bottom li {
+    display: inline-block;
+}
+div.chip_drawing ul.pinrow.left li, div.chip_drawing ul.pinrow.right li {
+}
+div.chip_drawing ul.pinrow.top li {
+    margin-bottom: 2px;
+}
+div.chip_drawing ul.pinrow.left li {
+}
+div.chip_drawing ul.pinrow.bottom li {
+}
+div.chip_drawing ul.pinrow.right li {
+}
+
+#settings li {
+    list-style-type: none; 
+    margin: 0;
+}
+
+input[readonly] {
+    background: #eee;
+    border: #ddd;
+}
+select {
+    width: 100%;
+    padding: 0.3em 0.1em;
+}
+
+a.button, a.button:hover,
+a.button:visited, a.button:focus {
+    border: 1px solid #ef0;
+    padding: 0.4em;
+    border-radius: 0.3em;
+    background: #fee;
+    box-shadow: #999 1px 1px 2px;
+    text-decoration: none;
+    transition: 0.3s linear;
+    color: #666;
+}
+a.button:hover {
+    background: #ffc;
+    box-shadow: #fee 2px 2px 2px;
+}
+
+body {
+    padding: 0;
+}
+div#content {
+    margin: 0;
+}
+h1, h2, h3, h1:hover, h2:hover, h3:hover {
+    color: #444;
+}
+h1 {
+    margin-bottom: 1.5em;
+}
+h1 img {
+    width: 50px;
+    float: left;
+    margin: -13px 0.5em 0 0;
+}
+
+#bar_tabs {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    padding: 1em 1em 0 1em;
+    border: 1px solid #eee;
+    box-shadow: #aaa -2px 2px 2px;
+    background: white;
+}
+#bar_tabs p.close, p#bar_tabs_open {
+    position: fixed;
+    top: 15px;
+    right: 5px;
+    padding: 0;
+    margin: 0;
+}
+#bar_tabs p.close a, p#bar_tabs_open a {
+    width: 1em;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 100%;
+    padding: 0.3em 0.5em;
+}
+#bar_tabs p {
+}
+
+.ui-dialog {
+    background: white !important;
+}
+
+ul.tabchoice {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+ul.tabchoice li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ul.tabchoice li a {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0.5em;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #aaa;
+    background: #ccc;
+    color: #000;
+}
+ul.tabchoice li a:hover {
+    background: #eee !important;
+    text-decoration: none;
+}
+ul.tabchoice li a.focus {
+    background: #999 !important;
+    text-decoration: none;
+}
+#bar_tabs div.tab {
+    border: 1px solid #aaa;
+    padding: 4em 1em 0 1em;
+}
+div.tab.inactive {
+    display: none;
+}
+p#activepin {
+    font-size: 2em;
+    margin: 0 0.2em 1em 0;
+    text-shadow: #aaa 2px 2px 2px;
+}
+
+table#pinlist {
+    border-bottom: 1px #aaa dotted;
+}
+table#pinlist tr.active th, table#pinlist tr.active td {
+    background: #ffd;
+}
+table#pinlist th {
+    font-size: 1.5em;
+    margin: 1em 0.2em;
+    text-shadow: #aaa 2px 2px 2px;
+}
+table#pinlist tr:hover td, table#pinlist tr:hover th {
+    background: #ffa;
+}
+table#pinlist td, table#pinlist th {
+    margin: 1em;
+    padding: 1em 1em 0.9em 1em;
+    border: 1px #aaa;
+    border-style: dotted none none none;
+    text-align: right;
+    cursor: pointer;
+}
+table#pinlist ul {
+    margin: 0;
+}
+table#pinlist li {
+    list-style-type: none;
+}
+
+.drop_zone {
+    border: 2px dashed #bbb;
+    border-radius: 5px;
+    text-align: center;
+    color: #bbb;
+    padding: 2em;
+}
+
+a {
+    cursor: pointer;
+}
+

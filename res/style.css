@@ -1,0 +1,464 @@
+@media all
+{
+    body
+    {
+        font-family: sans-serif;
+        padding         : 134px 0 0 0;
+        margin          : 0;
+        line-height     : 1.5em;
+        letter-spacing  : 0.02em;
+        background      : #fff;
+
+        background-size: 400% 400%;
+    }
+
+
+    fieldset {
+        border: none;
+    }
+    label {
+        float:left;
+        width:25%;
+        margin-right:0.5em;
+        padding-top:0.2em;
+        text-align:right;
+        font-weight:bold;
+    }
+    label + input {
+        display: block;
+        margin-bottom: 0.5em;
+    }
+
+    #menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #eee;
+        height: 3.9em;
+        width: 100%;
+        margin: 0;
+        padding: 1.4em 0 0 2em;
+        opacity: 0.4;
+        box-shadow: 2px 2px 4px #333;
+
+        -webkit-transition: height 0.5s, opacity 1.5s, background 2s;
+        transition: height 0.5s, opacity 1.5s, background 2s;
+    }
+    #menu:hover {
+        background-color: #fff;
+        background-image: url(logo.png);
+        background-repeat: no-repeat;
+        background-position: top 1em right 4em;
+
+        height: 140px;
+        opacity: 0.85;
+        box-shadow: 2px 2px 2px #333;
+    }
+
+    ul#menu li {
+        display: inline;
+        margin: 0.2em;
+        padding: 0;
+        list-style-type: none;
+    }
+    ul#menu li.active a {
+        background: #ddd;
+        box-shadow: 0px 0px 4px #000;
+    }
+    ul#menu li a {
+        background: #eee;
+        padding: 0.5em;
+        border: solid gray 1px;
+        /*-webkit-transform: rotate(-7deg);
+        transform: rotate(-7deg);*/
+        -webkit-transition: box-shadow 1s, border-radius 2s;
+        transition: box-shadow 1s, border-radius 2.5s;
+        border-radius: 4px;
+    }
+    ul#menu li a:hover {
+        background: #ddc;
+        box-shadow: 0px 0px 4px #555;
+        border-radius: 15px;
+    }
+    ul#menu {
+        list-style-type: none;
+    }
+
+    ul#menu li.lang {
+        display: none;
+        opacity: 0;
+        -webkit-transition: opacity 2s;
+        transition: opacity 6s;
+    }
+    ul#menu:hover li.lang {
+        display: block;
+        opacity: 0.7;
+        position: relative;
+        margin: 0;
+        top: 60px;
+        left: 85%;
+    }
+    ul#menu li.lang a {
+        color: #b82a3b;
+        border: none;
+        background: none;
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    .hvr-underline-from-right {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        position: relative;
+        overflow: hidden;
+    }
+    .hvr-underline-from-right:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 100%;
+        right: 0;
+        bottom: 0;
+        background: #b8b83b;
+        height: 4px;
+        -webkit-transition-property: left;
+        transition-property: left;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+    .hvr-underline-from-right:hover:before, .hvr-underline-from-right:focus:before, .hvr-underline-from-right:active:before {
+          left: 0;
+    }
+
+    div#leftbox {
+        padding: 0 1em 0 0;
+        width: 15em;
+    }
+
+    li ul {
+        border-left: 1px dotted black;
+    }
+    ul li {
+        list-style-type: circle;
+        margin-left: 0.2em;
+    }
+
+    address {
+        font-style: normal;
+    }
+
+    code
+    {
+        display         : block;
+        border          : 1px dashed black;
+        padding         : 1em;
+        overflow        : auto;
+    }
+
+    a:link
+    {
+        text-decoration : none;
+        color           : #333;
+        margin          : 0;
+        text-shadow: 0 0 3px #aaa;
+        -webkit-transition: text-decoration 1s;
+    }
+    a:visited
+    {
+        color           : #aaa;
+        text-decoration : none;
+        margin          : 0 0.2em;
+    }
+    a:hover, a:focus
+    {
+        text-decoration : underline;
+    }
+    a img {
+        border: none;
+    }
+
+    #menu a:link, #menu a:visited {
+        color: #000;
+        text-shadow: none;
+    }
+    #menu a:hover {
+        color: #000;
+        text-shadow: none;
+    }
+
+    dt a:link, dt a:visited, dt a:focus
+    {
+        text-decoration : none;
+        color           : black;
+    }
+    dt a:hover
+    {
+        text-decoration : none;
+        color           : gray;
+    }
+    dd {
+        margin-bottom: 0.5em;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+        text-shadow: 0 0 5px #aaa;
+        -webkit-transition: text-shadow 1s, color 2s;
+        transition: text-shadow 1s, color 2s;
+    }
+    #content:hover h1, #content:hover h2, #content:hover h3,
+    #content:hover h4, #content:hover h5, #content:hover h6 {
+        color: #666;
+        text-shadow: 0 0 7px #999;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.2em;
+        border-bottom: 1px dashed #fff;
+        border-radius: 0 0 15px 0;
+    }
+    h3 {
+        font-size: 1.1em;
+        border-bottom: 1px dashed #fff;
+        border-radius: 0 0 15px 0;
+    }
+
+    h1 a:link, h1 a:visited, h1 a:focus,
+    h2 a:link, h2 a:visited, h2 a:focus,
+    h3 a:link, h3 a:visited, h3 a:focus,
+    h4 a:link, h4 a:visited, h4 a:focus,
+    h5 a:link, h5 a:visited, h5 a:focus,
+    h6 a:link, h6 a:visited, h6 a:focus
+    {
+        color           : #091e4d;
+        text-decoration : none;
+    }
+
+    p, ul, ol, dl, table 
+    {
+        text-align      : justify;
+        margin-left     : 0;
+	}
+    table {
+        text-align: left;
+    }
+    table th {
+        font-weight: bold;
+        padding-right: 1em;
+    }
+
+    dl dt
+    {
+        font-weight     : bold;
+        border-bottom   : 1px dashed black;
+        margin-bottom   : 0.5em;
+    }
+
+    table.image td {
+        margin: 1em;
+        padding: 0.5em;
+        border: none;
+    }
+
+    table.datatable th, table.datatable td {
+        border-right: 1px dashed #ccc;
+        border-bottom: 1px dashed #ccc;
+        padding: 0.5em;
+    }
+
+    input, textarea {
+        padding: 0.5em;
+        background: #eee;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        width: 70%;
+    }
+    input:hover, textarea:hover {
+        box-shadow: 0 0 3px #ff0;
+        background: #fff;
+    }
+    input:focus, textarea:focus {
+        box-shadow: 0 0 3px #333;
+        background: #fff;
+    }
+    input[type=submit] {
+        background: #ffd;
+        color: #000;
+        width: auto;
+    }
+    input[type=submit]:hover {
+        background: #ffa;
+        opacity: 0.9;
+    }
+
+    textarea.error, input.error, p.error {
+        border: 1px solid red;
+    }
+    p.error, th.error {
+        color: red;
+    }
+    p.error {
+        color: white;
+        background: #b22;
+        box-shadow: 2px 2px 2px #333;
+    }
+    p.success {
+        color: white;
+        border: 1px solid green;
+        background: #292;
+        box-shadow: 2px 2px 2px #333;
+    }
+    p.error, p.success {
+        padding: 0.5em;
+    }
+
+	div#content {
+        color: #444;
+        line-height: 1.5em;
+        margin: -50px 30em -1em 3em;
+        padding: 2em;
+        min-width: 60%;
+        /*border: #fff solid;
+        border-width: 0 5px 0 0;
+        border-radius: 15px;*/
+        /*-webkit-transition: margin-top 3s, margin-bottom 2s, line-height 0.5s;
+        transition: margin-top 3s, margin-bottom 2s, line-height 0.5s;*/
+    }
+    div#content:hover {
+        /*margin-top: -30px;
+        margin-bottom: 0;
+        line-height: 1.7em;*/
+    }
+    div#content h1 {
+        margin-top:0;
+    }
+
+    div#rightcontent {
+        float: right;
+        margin: 0 4em 1em 1em;
+        border-left: 1px dashed #aaa;
+        padding-left: 3em;
+        /*max-width: 20%;*/
+    }
+
+    ul.infoline, ul.infoline li {
+        margin: 2em 0 0 0;
+        padding: 0 0.3em;
+        list-style-type: none;
+    }
+    ul.infoline li {
+        display: inline;
+        border-right: 1px solid gray;
+        padding-right: 0.5em;
+    }
+    ul.infoline {
+        font-weight     : bold;
+        font-size       : 0.8em;
+        border          : solid #aaa;
+        color: #aaa;
+        border-width    : 1px 0;
+        border-radius: 15px;
+        margin: 0 2em;
+    }
+    ul.infoline a {
+        color: #aaa !important;
+        text-shadow: none !important;
+        -webkit-transition: color 0.5s;
+        transition: color 0.5s;
+    }
+    ul.infoline:hover {
+        border-color: #555;
+    }
+    ul.infoline:hover, ul.infoline:hover a, ul.infoline:hover a:hover {
+        color: #555 !important;
+    }
+
+    #print {
+        display: none;
+    }
+
+    q {
+        quotes: "“" "”" "‘" "’";
+    }
+    q:before {
+        content: open-quote;
+    }
+    q:after {
+        content: close-quote;
+    }
+
+    blockquote {
+        float: right;
+        font-family: Georgia, serif;
+        font-size: 1.2em;
+        font-style: italic;
+        margin: 0.25em 0 0 40%;
+        padding: 0.25em 1em;
+        line-height: 1.45;
+        position: relative;
+        color: #383838;
+    }
+    blockquote:before {
+        display: block;
+        content: "\00AB";
+        font-size: 5em;
+        position: absolute;
+        left: -0.6em;
+        top: -0.7em;
+        color: #7a7a7a;
+    }
+    blockquote:after {
+        display: block;
+        content: "\00BB";
+        font-size: 4.5em;
+        position: absolute;
+        right: -0.5em;
+        top: -0.2em;
+        color: #7a7a7a;
+    }
+    blockquote.nosrc:after {
+        top: -0.5em;
+    }
+    cite {
+        color: #999999;
+        font-size: 0.8em;
+        display: block;
+        margin-top: 0.3em;
+    }
+
+    blockquote cite:before {
+        content: "\2014 \2009";
+    }
+}
+
+@media print {
+    body {
+        margin: 1em;
+        padding: 1em;
+    }
+    div#content {
+        left: 0;
+        top: 0;
+        margin: 0;
+    }
+    div#content p {
+        text-align: left;
+    }
+    #print {
+        display: block;
+        margin-top: 1em;
+        padding-top: 1em;
+        border-top: 1px solid black;
+    }
+}
+
