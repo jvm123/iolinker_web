@@ -1,6 +1,6 @@
 <?php
 /* (C) 2006 Julian von Mendel (http://derjulian.net)
- * License: LGPL
+ * License: MIT
  */
 
 if (class_exists("strings")) {

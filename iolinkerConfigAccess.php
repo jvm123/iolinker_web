@@ -1,7 +1,7 @@
 <?php
 /***
  * (C) 2017 Julian von Mendel <prog@jinvent.de>
- * LGPL
+ * License: MIT
  ***/
 
 class iolinkerConfigAccess {

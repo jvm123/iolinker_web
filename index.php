@@ -1,4 +1,9 @@
 <?php
+/***
+ * (C) 2017 Julian von Mendel <prog@jinvent.de>
+ * License: MIT
+ ***/
+
 define("REMOTE", $_SERVER["REQUEST_URI"]);
 require("strings.php");
 
