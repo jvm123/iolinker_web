@@ -4,6 +4,8 @@
  * License: MIT
  ***/
 
+require_once("strings.php");
+
 class iolinkerConfigAccess {
     protected static $path = "configs/";
     protected static $daemonpipe = "script/pipe";
@@ -37,12 +39,16 @@ class iolinkerConfigAccess {
             return false;
         }
         
-        $options = array("chipType", "pinList", "chipSettings", "hexConfig");
+        $options = array("pinList", "chipSettings", "hexConfig");
         
         foreach ($options as $option) {
             if (!isset($json[$option])) {
                 return false;
             }
+        }
+
+        if (!isset($json["chipSettings"]["chipType"])) {
+            return false;
         }
 
         foreach ($json as $key => $val) {
@@ -51,10 +57,23 @@ class iolinkerConfigAccess {
             }
         }
 
+        /* Validate hex string format, that contains two digit hex
+           codes seperated by white spaces and newlines, e.g.
+           "3b c1 F7\n00 00 01" */
+        if (preg_match("/^([0-9a-fA-F]{2}[\s]+)+\$/",
+                    $json["hexConfig"].' ') != 1) {
+            // EVIL input string detected. Do not process.
+            return false;
+        }
+
         return true;
     }
 
     protected static function exportShellScript($json) {
+        if (!self::checkConfig($json)) {
+            return false;
+        }
+
         $bash = "#!/bin/bash\ndev='/dev/ttyAMA0'\nstty -F \$dev 115200\n\n";
 
         $hexConfig = explode("\n", $json["hexConfig"]);
@@ -63,6 +82,7 @@ class iolinkerConfigAccess {
             while (substr_count($hexstring, "  ")) {
                 $hexstring = str_replace("  ", " ", $hexstring);
             }
+
             if (substr($hexstring, -1) == " ") {
                 $hexstring = substr($hexstring, 0, -1);
             }
@@ -76,6 +96,7 @@ class iolinkerConfigAccess {
         }
 
         file_put_contents(self::$bashscript, $bash);
+        return true;
     }
 
     public static function read($file_) {
@@ -87,10 +108,10 @@ class iolinkerConfigAccess {
         
         $config = file_get_contents($file);
         $json = strings::json_clean_decode($config, true);
-        if (!self::checkConfig($json)) {
-            //return false;
+        
+        if (!self::exportShellScript($json)) {
+            return false;
         }
-        self::exportShellScript($json);
         
         file_put_contents(self::$daemonpipe, date("U")." load ".
                 $file_."\n", FILE_APPEND);
